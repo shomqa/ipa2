@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shoma | IPA Store</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f5f5f7;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 { color: #1d1d1f; margin-bottom: 25px; font-size: 28px; text-align: center; }
+        .container {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+        .app-info { display: flex; align-items: center; gap: 14px; }
+        .app-icon {
+            width: 55px;
+            height: 55px;
+            background: #e8e8ed;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        .app-name { font-weight: 600; color: #1d1d1f; font-size: 16px; }
+        .app-version { font-size: 13px; color: #86868b; margin-top: 3px; }
+        .btn-install {
+            background: #0071e3;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background 0.2s, transform 0.1s;
+        }
+        .btn-install:active { background: #005bb5; transform: scale(0.95); }
+    </style>
+</head>
+<body>
+
+    <h1>Мои Приложения</h1>
+
+    <div class="container" id="app-list">
+        <!-- Сюда автоматически добавятся все приложения -->
+    </div>
+
+    <script>
+        // СПИСОК ТВОИХ ПРИЛОЖЕНИЙ
+        // Отредактируй названия, иконки и замени ссылки на свои оставшиеся 11 штук
+        const apps = [
+            { 
+                name: "MAX", 
+                version: "1.0", 
+                icon: "📱", 
+                url: "itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/shomqa/ipa2/refs/heads/main/MAX.plist" 
+            },
+            { 
+                name: "Ак Барс Банк", 
+                version: "1.0", 
+                icon: "📱", 
+                url: "itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/shomqa/ipa2/refs/heads/main/akbars.plist" 
+            },
+            { 
+                name: "Альфа Банк (А-Ключ)", 
+                version: "1.0", 
+                icon: "📱", 
+                url: "itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/shomqa/ipa2/refs/heads/main/alfabank.plist" 
+            },
+            { 
+                name: "АЗС ТатНефть", 
+                version: "1.0", 
+                icon: "📱", 
+                url: "itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/shomqa/ipa2/refs/heads/main/azs.plist" 
+            },
+            { 
+                name: "Лента", 
+                version: "1.0", 
+                icon: "📱", 
+                url: "itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/shomqa/ipa/refs/heads/main/lenta.plist" 
+            },
+            { 
+                name: "Лента Онлайн", 
+                version: "1.0", 
+                icon: "📱", 
+                url: "itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/shomqa/ipa/refs/heads/main/lentaonline.plist" 
+            },
+            { 
+                name: "Почта Mail.ru", 
+                version: "1.0", 
+                icon: "📱", 
+                url: "itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/shomqa/ipa/refs/heads/main/mailru.plist" 
+            },
+            { 
+                name: "Совком Банк", 
+                version: "1.0", 
+                icon: "📱", 
+                url: "itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/shomqa/ipa/refs/heads/main/sovkombank.plist" 
+            },
+            { 
+                name: "ВК Музыка", 
+                version: "1.0", 
+                icon: "📱", 
+                url: "itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/shomqa/ipa/refs/heads/main/vkmusic.plist" 
+            }
+        ];
+
+        // Рендеринг карточек на страницу
+        const container = document.getElementById('app-list');
+        
+        apps.forEach(app => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div class="app-info">
+                    <div class="app-icon">${app.icon}</div>
+                    <div>
+                        <div class="app-name">${app.name}</div>
+                        <div class="app-version">Версия: ${app.version}</div>
+                    </div>
+                </div>
+                <a class="btn-install" href="${app.url}">Установить</a>
+            `;
+            container.appendChild(card);
+        });
+    </script>
+
+</body>
+</html>
