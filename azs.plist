@@ -11,19 +11,19 @@
                     <key>kind</key>
                     <key>software-package</key>
                     <key>url</key>
-                    <string>https://github.com/shomqa/ipa/releases/download/v1/VK.ipa</string>
+                    <string>https://github.com/shomqa/ipa2/releases/download/v1/akbars.ipa</string>
                 </dict>
             </array>
             <key>metadata</key>
             <dict>
                 <key>bundle-identifier</key>
-                <string>com.vk.vkclient</string>
+                <string>ru.abb.akbarsonline</string>
                 <key>bundle-version</key>
-                <string>8.183</string>
+                <string>3.156.0</string>
                 <key>kind</key>
                 <string>software</string>
                 <key>title</key>
-                <string>VK</string>
+                <string>Ак Барс Банк</string>
             </dict>
         </dict>
     </array>
